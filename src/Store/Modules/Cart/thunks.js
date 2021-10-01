@@ -1,13 +1,13 @@
-import { AddProduct, RemoveProduct } from "./actions";
+import { AddProduct, RemoveProduct, ClearCart } from "./actions";
 
 export const ClearCartThunk = () => {
   return (dispatch, getState) => {
     const updateProduct = {
       productsCart: [],
-      status: true,
+      status: false,
     };
     localStorage.setItem("cart", JSON.stringify(updateProduct));
-    dispatch(AddProduct(updateProduct));
+    dispatch(ClearCart(updateProduct));
   };
 };
 

@@ -1,3 +1,4 @@
+import Button from "../Button";
 import { Container } from "./styles";
 function CardProduct({ name, price, image, data, handleAddCart }) {
   return (
@@ -8,9 +9,11 @@ function CardProduct({ name, price, image, data, handleAddCart }) {
       <li>{name}</li>
       <li>R${price}</li>
       <li>
-        <button onClick={() => handleAddCart(data)}>
-          Adicionar ao Carrinho
-        </button>
+        <Button
+          callback={handleAddCart}
+          param={data}
+          value={"Adicionar ao carrinho"}
+        />
       </li>
     </Container>
   );

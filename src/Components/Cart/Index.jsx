@@ -1,3 +1,4 @@
+import Button from "../Button";
 import { Carrinho, Close } from "./styles";
 function Cart({ handleRemoveCart, handleEmptyCart }) {
   const { productsCart } = JSON.parse(localStorage.getItem("cart") || []);
@@ -5,22 +6,26 @@ function Cart({ handleRemoveCart, handleEmptyCart }) {
     <Carrinho>
       {productsCart[0] &&
         productsCart.map((element, indice) => (
-          <ul>
-            <li>
+          <ul key={indice}>
+            <li key={element.img}>
               <img
                 className="iconProductCard"
                 src={`${element.image}`}
                 alt={element.name}
               />
             </li>
-            <li>{element.name}</li>
-            <li>{element.price}</li>
+            <li key={element.name}>{element.name}</li>
+            <li ky={element.price}>{element.price}</li>
             <li>
               <Close onClick={() => handleRemoveCart(indice)}>x</Close>
             </li>
           </ul>
         ))}
-      <button onClick={handleEmptyCart}>Esvaziar carrinho</button>
+      <Button
+        callback={handleEmptyCart}
+        isSegundary
+        value={"Esvaziar carrinho"}
+      />
     </Carrinho>
   );
 }

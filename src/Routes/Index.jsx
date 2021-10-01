@@ -3,7 +3,7 @@ import Home from "../Pages/Home";
 import Shopping from "../Pages/Shopping";
 function Routes() {
   return (
-    <switch>
+    <Switch>
       <Route exact path="/">
         <Home />
       </Route>
@@ -13,7 +13,7 @@ function Routes() {
       <Route path="/Shopping">
         <Shopping />
       </Route>
-    </switch>
+    </Switch>
   );
 }
 export default Routes;

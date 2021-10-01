@@ -10,7 +10,7 @@ import {
   ClearCartThunk,
 } from "../../Store/Modules/Cart/thunks";
 import Cart from "../Cart/Index";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 function AllProducts() {
   const products = [
@@ -29,7 +29,6 @@ function AllProducts() {
   ];
 
   const { productsCart, status } = useSelector((state) => state.cart);
-  // const [productsCart,setproductsCart] = useState([])
 
   const dispatch = useDispatch();
   const handleAddCart = (data) => {
@@ -40,12 +39,10 @@ function AllProducts() {
     dispatch(removeProductThunk(data));
   };
   const handleEmptyCart = () => {
-    // localStorage.clear();
+    localStorage.clear();
     dispatch(ClearCartThunk());
-    console.log("limpou");
   };
   useEffect(() => {
-    console.log("montou");
     const cart = JSON.parse(localStorage.getItem("cart"));
     if (cart) {
       dispatch(SeachThunk(cart));
@@ -54,7 +51,6 @@ function AllProducts() {
   return (
     <>
       <Container>
-        {console.log(productsCart)}
         {products[0] &&
           products.map((element, indice) => (
             <CardProduct
