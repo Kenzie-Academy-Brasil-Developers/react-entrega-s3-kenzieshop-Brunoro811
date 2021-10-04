@@ -1,10 +1,11 @@
 import Navbar from "../Components/Navbar";
+import { ContainerHome } from "./pages";
 
 function Home() {
   return (
     <>
       <Navbar />
-      <div>Bem vindo a Home</div>
+      <ContainerHome>Bem vindo a Home</ContainerHome>
     </>
   );
 }
