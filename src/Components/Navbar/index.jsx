@@ -10,9 +10,6 @@ function Navbar() {
         <Link to="/Shopping">Produtos</Link>
       </li>
       <li>
-        <Link to="/Cart">Carinho</Link>
-      </li>
-      <li>
         <Link to="/Login">Entrar</Link>
       </li>
     </Nav>
