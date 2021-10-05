@@ -4,13 +4,15 @@ function Navbar() {
   return (
     <Nav>
       <li>
-        <Link to="/">Início</Link>
+        <h3>
+          <span>Shopp</span>ing
+        </h3>
       </li>
       <li>
-        <Link to="/Shopping">Produtos</Link>
+        <Link to="/">Produtos</Link>
       </li>
       <li>
-        <Link to="/Login">Entrar</Link>
+        <Link to="/">Entrar</Link>
       </li>
     </Nav>
   );

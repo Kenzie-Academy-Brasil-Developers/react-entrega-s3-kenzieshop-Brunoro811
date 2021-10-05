@@ -10,4 +10,11 @@ export const Container = styled.ul`
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  li {
+    padding: 2px 0px;
+  }
+  li img {
+    width: 100%;
+    max-width: 120px;
+  }
 `;
